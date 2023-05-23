@@ -1,0 +1,15 @@
+
+.container{
+
+    border: 5px solid black;
+    height: 520px;
+    width: 520px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box{
+    width: 126px;
+    height: 126px;
+    border: 2px solid black;
+}
