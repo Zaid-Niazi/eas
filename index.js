@@ -1,24 +1,15 @@
-/**
- For it to be a sucess:
- Never overflow
- either increase container or
- decrease box size
-
- increase container - define via dom. change the size of total area is
- not evenly divisible by content area
- **/
-
-
 
 //DOM SELECTIONS
-
+const main = document.querySelector('.main')
 const container = document.querySelector('.container')
 const resetButton = document.querySelector('.reset')
 const sixteen = document.querySelector('.sixteen')
 const thirtytwo = document.querySelector('.thirtytwo')
 const sixtyfour = document.querySelector('.sixtyfour')
 const onetwentyeight = document.querySelector('.onetwentyeight')
-
+const colorPicker = document.getElementById('colorPicker')
+let color = 'black'
+colorPicker.addEventListener('input',(x) => color = colorPicker.value)
 
 let containerSize = 960
 
@@ -30,6 +21,7 @@ container.style.width = `${containerSize}px`
 //MAIN GRID CODE
 
 function gridMaker(num){
+    container.innerHTML=''
     let limit = num*num
     for(let i=1; i<= limit; i++){
 
@@ -43,7 +35,7 @@ function gridMaker(num){
         box.classList.add('box');
         box.classList.add(`${i}`);
     
-        box.addEventListener('mouseover', (e)=> e.target.style.backgroundColor = "black")
+        box.addEventListener('mouseover', (e)=> e.target.style.backgroundColor = `${color}`)
         container.appendChild(box)
     
     }
@@ -51,8 +43,7 @@ function gridMaker(num){
     
 }
 
-
-
+// Options
 
 sixteen.addEventListener('click', numOfSquares)
 thirtytwo.addEventListener('click', numOfSquares)
@@ -65,31 +56,24 @@ function numOfSquares(e){
 if(e.target.className === 'sixteen'){
      num = 16
 }
-
-
 else if(e.target.className === 'thirtytwo'){
      num = 32
 }
-
-
-
 else if(e.target.className === 'sixtyfour'){
      num = 64
 }
-
 else if(e.target.className === 'onetwentyeight'){
     num = 128
 }
-
 gridMaker(num)
 }
 
 
-//BUTTONS
+
+//Reset
 
 resetButton.addEventListener('click', reset)
 function reset(){
-location.reload()
-
+container.innerHTML=''
 }
 
