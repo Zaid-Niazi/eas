@@ -1,15 +1,35 @@
-
-.container{
-
-    border: 5px solid black;
-    height: 520px;
-    width: 520px;
-    display: flex;
-    flex-wrap: wrap;
+body{
+    margin-top: 15px;
+    text-align: center;
 }
 
-.box{
-    width: 126px;
-    height: 126px;
+.main{
+    margin: auto;
+    padding: 50px;
     border: 2px solid black;
+    height: 1000px;
+    width: 1000px;
+    display: flex;
+    flex: 1 1 1;
+    padding: 50px;
+    justify-content: center;
+}
+
+.container{
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap:wrap ;
+    gap: 0;
+    flex: 1 1 1;
+}
+
+button{
+    width: 50px;
+    height: 50px;
+}
+
+.buttons{
+    margin-top: 15px;
 }
