@@ -20,8 +20,10 @@ const sixtyfour = document.querySelector('.sixtyfour')
 const onetwentyeight = document.querySelector('.onetwentyeight')
 
 
-container.style.height = '960px'
-container.style.width = '960px'
+let containerSize = 960
+
+container.style.height = `${containerSize}px`
+container.style.width = `${containerSize}px`
 
 
 
@@ -33,7 +35,7 @@ function gridMaker(num){
 
         const box = document.createElement('div');
 
-        let calc = ((Math.sqrt(921600/limit)))
+        let calc = ((Math.sqrt((containerSize**2)/limit)))
 
         box.style.height = `${calc-2}px`
         box.style.width = `${calc-2}px`
